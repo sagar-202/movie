@@ -65,6 +65,12 @@ app.get('/api/debug/all-users', async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+// Export the Express API
+module.exports = app;
+
+// Only listen when running locally (not in Vercel)
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+    });
+}
