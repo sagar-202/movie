@@ -12,17 +12,15 @@ const HeroBanner = () => {
         try {
             setLoading(true);
             setError(null);
-            // Fetch Avengers as the hero movie
-            const searchResults = await searchMovies('Avengers');
-            if (searchResults && searchResults.length > 0) {
-                // Get the first result (usually the 2012 movie)
-                const heroId = searchResults[0].imdbID;
-                const details = await getMovieDetails(heroId);
-                console.log('[HeroBanner] Fetched Hero Movie:', details);
+            // Fetch Guardians of the Galaxy Vol. 2 as the hero movie
+            const heroId = 'tt3896198';
+            const details = await getMovieDetails(heroId);
+            console.log('[HeroBanner] Fetched Hero Movie:', details);
+            if (details) {
                 setMovie(details);
             } else {
-                console.warn('[HeroBanner] No Avengers movie found');
-                setError('No movies found');
+                console.warn('[HeroBanner] Movie not found');
+                setError('Movie not found');
             }
         } catch (err) {
             console.error('Failed to fetch hero movie', err);
