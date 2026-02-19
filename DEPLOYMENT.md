@@ -76,3 +76,18 @@ Vercel will:
 ## Done!
 
 Your app should now be live at `https://your-project-name.vercel.app`.
+
+## Updating Environment Variables (Post-Deployment)
+
+If you need to change your API keys (like `VITE_OMDB_API_KEY`) or database credentials after deploying:
+
+1.  Go to your **Vercel Dashboard** and select your project.
+2.  Click on the **Settings** tab.
+3.  Select **Environment Variables** from the sidebar.
+4.  Find the variable you want to update (e.g., `VITE_OMDB_API_KEY`).
+5.  Click the three dots (options) next to it and select **Edit**.
+6.  Enter the new value and save.
+7.  **IMPORTANT**: You must **Redeploy** for changes to take effect:
+    -   Go to the **Deployments** tab.
+    -   Click the three dots next to your latest deployment.
+    -   Select **Redeploy**.
